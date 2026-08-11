@@ -79,11 +79,13 @@ $ py .\clockify_pdf_extractor.py .\sample\Clockify_Time_Report_Detailed_01_07_20
 8  02/07/2026     Task-01    TEST  04:00:00  10:00:00 - 14:00:00  Lucas Picchi
 
 Extracted 9 entries.
-Saved to reports\Clockify_Time_Report_Detailed_01_07_2026-31_07_2026.xlsx
+Saved to sample\Clockify_Time_Report_Detailed_01_07_2026-31_07_2026.xlsx
 ```
 
 ## Notes
 
+* Works with reports exported in any language. Columns are located by their position on the page, not by matching header text, so a Spanish `Informe detallado` parses the same as an English `Detailed report`.
+* Handles descriptions long enough to wrap onto several lines, which push the project and time range onto lines of their own.
 * Automatically ignores report headers, totals, footers, and other non-entry lines.
 * If `--output` is omitted, the Excel file is created next to the PDF with the same base filename.
 
