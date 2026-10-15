@@ -7,7 +7,9 @@ import pdfplumber
 
 DATE_RE = re.compile(r"^\d{2}/\d{2}/\d{4}$")
 DURATION_RE = re.compile(r"^\d{1,3}:\d{2}:\d{2}$")
-TIME_RANGE_RE = re.compile(r"^\d{1,3}:\d{2}:\d{2}\s*-\s*\d{1,3}:\d{2}:\d{2}$")
+TIME_RANGE_RE = re.compile(
+    r"^\d{1,3}:\d{2}(?::\d{2})?\s*-\s*\d{1,3}:\d{2}(?::\d{2})?$"
+)
 
 ROW_TOLERANCE = 2  # points; words this close vertically belong to the same row
 COLUMN_MARGIN = 2  # points of slack when assigning a word to a column
